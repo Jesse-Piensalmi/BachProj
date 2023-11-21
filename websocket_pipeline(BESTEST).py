@@ -4,6 +4,7 @@ import websockets
 import base64
 import pyrealsense2 as rs
 import numpy as np
+
 pipeline = rs.pipeline()
 config = rs.config()
 config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
