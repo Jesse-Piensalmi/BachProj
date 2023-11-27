@@ -1,7 +1,16 @@
 import asyncio
 import websockets
 import get_ip_address
+import RPi.GPIO as GPIO
+import time
 
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(37,GPIO.OUT) #PWMR
+GPIO.setup(38,GPIO.OUT) #PWML
+GPIO.setup(32,GPIO.OUT) #L_EN
+GPIO.setup(33,GPIO.OUT) #R_EN
+GPIO.output(37, GPIO.LOW)
+GPIO.output(38, GPIO.LOW)
 
 async def handle_websockets(websocket,path):
     
